@@ -43,6 +43,7 @@ public class AddJourney extends javax.swing.JFrame {
         btnLogout = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(204, 255, 255));
         setMaximumSize(new java.awt.Dimension(250, 400));
         setMinimumSize(new java.awt.Dimension(250, 400));
         setPreferredSize(new java.awt.Dimension(250, 400));
@@ -56,13 +57,17 @@ public class AddJourney extends javax.swing.JFrame {
         cmbTo.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         cmbTo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cmbTo, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 90, 130, -1));
+
+        dcJourneyDate.setBackground(new java.awt.Color(255, 255, 255));
         getContentPane().add(dcJourneyDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 120, 130, -1));
 
         cmbVehicleType.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         cmbVehicleType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
         getContentPane().add(cmbVehicleType, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 150, 130, -1));
 
+        tblJourneys.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         tblJourneys.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        tblJourneys.setForeground(new java.awt.Color(255, 255, 255));
         tblJourneys.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -76,16 +81,18 @@ public class AddJourney extends javax.swing.JFrame {
         ));
         jScrollPane1.setViewportView(tblJourneys);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, 210, 120));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 190, 210, 100));
 
+        btnBook.setBackground(new java.awt.Color(255, 255, 255));
         btnBook.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBook.setText("book");
+        btnBook.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         btnBook.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBookActionPerformed(evt);
             }
         });
-        getContentPane().add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 330, -1, -1));
+        getContentPane().add(btnBook, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 310, 60, 30));
 
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jLabel1.setText("From");
@@ -105,23 +112,29 @@ public class AddJourney extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 60, 30));
 
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout.setText("Logout");
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout.setMaximumSize(new java.awt.Dimension(31, 17));
+        btnLogout.setMinimumSize(new java.awt.Dimension(31, 17));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 60, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 

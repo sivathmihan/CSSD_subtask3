@@ -56,7 +56,7 @@ public class OpenWindowAndroid extends javax.swing.JFrame {
                 jButton1ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 110, 30));
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 310, 110, 30));
 
         jButton2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jButton2.setText("Sign up");
@@ -66,7 +66,7 @@ public class OpenWindowAndroid extends javax.swing.JFrame {
                 jButton2ActionPerformed(evt);
             }
         });
-        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 330, 110, 30));
+        getContentPane().add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 310, 110, 30));
 
         pack();
         setLocationRelativeTo(null);
