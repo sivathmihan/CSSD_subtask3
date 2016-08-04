@@ -63,26 +63,37 @@ public class VehicalDetails extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnBack.setMinimumSize(new java.awt.Dimension(80, 30));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout.setText("Logout");
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnLogout.setMinimumSize(new java.awt.Dimension(80, 30));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 
+        tblvehiDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         tblvehiDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -98,14 +109,19 @@ public class VehicalDetails extends javax.swing.JFrame {
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 220, 130));
 
+        btnVehical.setBackground(new java.awt.Color(255, 255, 255));
         btnVehical.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnVehical.setText("Add Vehical");
+        btnVehical.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnVehical.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnVehical.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnVehical.setMinimumSize(new java.awt.Dimension(80, 30));
         btnVehical.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnVehicalActionPerformed(evt);
             }
         });
-        getContentPane().add(btnVehical, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 30));
+        getContentPane().add(btnVehical, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 80, 30));
 
         txtSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         txtSearch.addActionListener(new java.awt.event.ActionListener() {
@@ -115,27 +131,32 @@ public class VehicalDetails extends javax.swing.JFrame {
         });
         getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 130, -1));
 
+        btnSearch.setBackground(new java.awt.Color(255, 255, 255));
         btnSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnSearch.setText("Search");
+        btnSearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSearch.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnSearch.setMinimumSize(new java.awt.Dimension(80, 30));
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, 80, 30));
 
         btnvehiDetails.add(rbBus);
-        rbBus.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbBus.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbBus.setText("Bus");
         getContentPane().add(rbBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
 
         btnvehiDetails.add(rbTrain);
-        rbTrain.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTrain.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbTrain.setText("Train");
         getContentPane().add(rbTrain, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
 
         btnvehiDetails.add(rbTram);
-        rbTram.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTram.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbTram.setText("Tram");
         getContentPane().add(rbTram, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
 

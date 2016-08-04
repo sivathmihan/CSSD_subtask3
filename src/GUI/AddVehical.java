@@ -70,23 +70,33 @@ public class AddVehical extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnBack.setMinimumSize(new java.awt.Dimension(80, 30));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout.setText("Logout");
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnLogout.setMinimumSize(new java.awt.Dimension(80, 30));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 
@@ -96,36 +106,41 @@ public class AddVehical extends javax.swing.JFrame {
         txtVehicalNo.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         getContentPane().add(txtVehicalNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 180, 20));
 
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Date");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
+        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 220, -1, -1));
 
+        btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmit.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnSubmit.setText("Submit");
+        btnSubmit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnSubmit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSubmit.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnSubmit.setMinimumSize(new java.awt.Dimension(80, 30));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 110, 40));
-        getContentPane().add(dcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 130, -1));
+        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 270, 80, 30));
+        getContentPane().add(dcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 220, 130, -1));
 
-        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel3.setText("Vehicle");
         getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
 
         btnvehicle.add(rbBus);
-        rbBus.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbBus.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbBus.setText("Bus");
         getContentPane().add(rbBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
 
         btnvehicle.add(rbTrain);
-        rbTrain.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTrain.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbTrain.setText("Train");
         getContentPane().add(rbTrain, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
 
         btnvehicle.add(rbTram);
-        rbTram.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTram.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbTram.setText("Tram");
         getContentPane().add(rbTram, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 

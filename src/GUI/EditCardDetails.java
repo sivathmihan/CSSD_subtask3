@@ -67,50 +67,65 @@ public class EditCardDetails extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(250, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnAddCard.setBackground(new java.awt.Color(255, 255, 255));
         btnAddCard.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnAddCard.setText("Add Details");
+        btnAddCard.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnAddCard.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddCard.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnAddCard.setMinimumSize(new java.awt.Dimension(80, 30));
         btnAddCard.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddCardActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAddCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 260, 100, 30));
+        getContentPane().add(btnAddCard, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 230, 80, 30));
 
-        label1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label1.setText("Card No");
         getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        label2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label2.setText("Name on card");
         getContentPane().add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
-        label3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label3.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label3.setText("CVV No");
         getContentPane().add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        label4.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label4.setText("Exp date");
         getContentPane().add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 180, -1, -1));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnBack.setMinimumSize(new java.awt.Dimension(80, 30));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout.setText("Logout");
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnLogout.setMinimumSize(new java.awt.Dimension(80, 30));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 

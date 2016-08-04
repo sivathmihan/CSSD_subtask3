@@ -53,26 +53,36 @@ public class InspectorFine extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnBack.setMinimumSize(new java.awt.Dimension(80, 30));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout.setText("Logout");
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnLogout.setMinimumSize(new java.awt.Dimension(80, 30));
+        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 10, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 
-        label1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label1.setText("Passanger ID");
         getContentPane().add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, -1, -1));
 
-        label2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label2.setText("Amount");
         getContentPane().add(label2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 100, -1, -1));
 
@@ -85,27 +95,32 @@ public class InspectorFine extends javax.swing.JFrame {
         txtPassangerID.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         getContentPane().add(txtPassangerID, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 60, 130, -1));
 
-        label4.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label4.setText("Crime");
         getContentPane().add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
         getContentPane().add(dcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 240, 130, -1));
 
-        label5.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label5.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         label5.setText("Date");
         getContentPane().add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 240, -1, -1));
 
-        jCheckBox1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jCheckBox1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jCheckBox1.setText("Paid");
         getContentPane().add(jCheckBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 280, -1, -1));
 
+        btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmit.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnSubmit.setText("Submit");
+        btnSubmit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnSubmit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSubmit.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnSubmit.setMinimumSize(new java.awt.Dimension(80, 30));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 100, 30));
+        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 320, 80, 30));
 
         pack();
         setLocationRelativeTo(null);

@@ -92,37 +92,47 @@ public class Signup extends javax.swing.JFrame {
         getContentPane().add(txtPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 210, 200, 25));
 
         bgGender.add(rbFemale);
-        rbFemale.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbFemale.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbFemale.setText("Female");
         getContentPane().add(rbFemale, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 280, -1, -1));
 
         bgGender.add(rbOthers);
-        rbOthers.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbOthers.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbOthers.setText("Others");
         getContentPane().add(rbOthers, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 280, -1, -1));
 
         bgGender.add(rbMale);
-        rbMale.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbMale.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbMale.setText("Male");
         getContentPane().add(rbMale, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 280, -1, -1));
 
+        btnSubmit.setBackground(new java.awt.Color(255, 255, 255));
         btnSubmit.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnSubmit.setText("Submit");
+        btnSubmit.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnSubmit.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSubmit.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnSubmit.setMinimumSize(new java.awt.Dimension(80, 30));
         btnSubmit.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSubmitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 330, 100, 30));
+        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 330, 80, 30));
 
+        btnCancel.setBackground(new java.awt.Color(255, 255, 255));
         btnCancel.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnCancel.setText("Cancel");
+        btnCancel.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnCancel.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancel.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnCancel.setMinimumSize(new java.awt.Dimension(80, 30));
         btnCancel.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 330, 110, 30));
+        getContentPane().add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 330, 80, 30));
 
         txtPassword.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         getContentPane().add(txtPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 200, 25));
@@ -130,7 +140,7 @@ public class Signup extends javax.swing.JFrame {
         txtCPassword.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         getContentPane().add(txtCPassword, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 120, 200, 25));
 
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel1.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel1.setText("Gender");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 250, -1, -1));
 

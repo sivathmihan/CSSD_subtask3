@@ -5,6 +5,17 @@
  */
 package GUI;
 
+import Controllers.Serialize;
+import Entities.station;
+import EntitySets.SetOfStations;
+import java.io.IOException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author CRYSIS_POOL
@@ -14,6 +25,7 @@ public class StationsDetails extends javax.swing.JFrame {
     /**
      * Creates new form StationsDetails
      */
+    SetOfStations<station> sOs;
     public StationsDetails() {
         initComponents();
     }
@@ -31,10 +43,10 @@ public class StationsDetails extends javax.swing.JFrame {
         btnBack = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblStation = new javax.swing.JTable();
         btnAddStation = new javax.swing.JButton();
         txtSearch = new javax.swing.JTextField();
-        btnSearch = new javax.swing.JButton();
+        jButton1 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(250, 400));
@@ -46,27 +58,38 @@ public class StationsDetails extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnBack.setMinimumSize(new java.awt.Dimension(80, 30));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, 80, 30));
 
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout.setText("Logout");
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnLogout.setMinimumSize(new java.awt.Dimension(80, 30));
         btnLogout.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogoutActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblStation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        tblStation.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -77,25 +100,39 @@ public class StationsDetails extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblStation);
 
         getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 80, 220, 240));
 
+        btnAddStation.setBackground(new java.awt.Color(255, 255, 255));
         btnAddStation.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnAddStation.setText("Add Station");
+        btnAddStation.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnAddStation.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnAddStation.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnAddStation.setMinimumSize(new java.awt.Dimension(80, 30));
         btnAddStation.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnAddStationActionPerformed(evt);
             }
         });
-        getContentPane().add(btnAddStation, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 30));
+        getContentPane().add(btnAddStation, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, 80, 30));
 
         txtSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, 130, -1));
 
-        btnSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        btnSearch.setText("Search");
-        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 50, -1, -1));
+        jButton1.setBackground(new java.awt.Color(255, 255, 255));
+        jButton1.setText("Search");
+        jButton1.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        jButton1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jButton1.setMaximumSize(new java.awt.Dimension(80, 30));
+        jButton1.setMinimumSize(new java.awt.Dimension(80, 30));
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+        getContentPane().add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, 80, 30));
 
         pack();
         setLocationRelativeTo(null);
@@ -120,6 +157,11 @@ public class StationsDetails extends javax.swing.JFrame {
         as.setVisible(true);
 
     }//GEN-LAST:event_btnAddStationActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        searchStationByID(tblStation, sOs, txtSearch);
+    }//GEN-LAST:event_jButton1ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -160,10 +202,47 @@ public class StationsDetails extends javax.swing.JFrame {
     private javax.swing.JButton btnAddStation;
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnLogout;
-    private javax.swing.JButton btnSearch;
+    private javax.swing.JButton jButton1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tblStation;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+private void searchStationByID(JTable tblStation, SetOfStations<station> sOs,JTextField txt) {
+       DefaultTableModel dtm=(DefaultTableModel) tblStation.getModel();
+        dtm.setRowCount(0);
+        String text=txt.getText();
+        String type="";
+        
+        
+      try {
+          sOs=(SetOfStations<station>) Serialize.deserialize("SetOfStations.ser");
+          
+          for(station sta:sOs){
+              if(type.equals("")){
+                  if(sta.getStaId().contains(text)){
+                  Vector v=new Vector();
+                  v.add(sta.getStaId());
+                  v.add(sta.getStaName());
+                  v.add(sta.getDate());
+                  Vector h=new Vector();
+                  h.add("ID");
+                  h.add("Station Name");
+                  h.add("Added Date");
+                  dtm.addRow(v);
+                  dtm.setColumnIdentifiers(h);
+              }
+                  
+              }
+              
+               tblStation.setModel(dtm);
+               
+          }
+      } catch (IOException ex) {
+          Logger.getLogger(StaffDetails.class.getName()).log(Level.SEVERE, null, ex);
+      } catch (ClassNotFoundException ex) {
+          Logger.getLogger(StaffDetails.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
+
 }

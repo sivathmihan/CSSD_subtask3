@@ -82,44 +82,52 @@ public class PassangerProfile extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(250, 400));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblName.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblName.setText("Name");
         getContentPane().add(lblName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 110, 120, -1));
 
-        lblUserName.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblUserName.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblUserName.setText("username");
         getContentPane().add(lblUserName, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 140, 120, -1));
 
-        lblEmail.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblEmail.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblEmail.setText("email");
         getContentPane().add(lblEmail, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 170, 120, -1));
 
-        lblAddress.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblAddress.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblAddress.setText("address");
         getContentPane().add(lblAddress, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 200, 120, -1));
 
-        lblPhone.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblPhone.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblPhone.setText("phone");
         getContentPane().add(lblPhone, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 230, 120, -1));
 
-        lblGender.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblGender.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblGender.setText("gender");
         getContentPane().add(lblGender, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 260, 120, -1));
 
+        btnUpdateDetails.setBackground(new java.awt.Color(255, 255, 255));
         btnUpdateDetails.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnUpdateDetails.setText("Update Details");
-        getContentPane().add(btnUpdateDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, -1, 30));
+        btnUpdateDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnUpdateDetails.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnUpdateDetails.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnUpdateDetails.setMinimumSize(new java.awt.Dimension(80, 30));
+        getContentPane().add(btnUpdateDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 290, 100, 30));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Account "));
         jPanel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        lblBalance.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblBalance.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblBalance.setText("balnce");
         jPanel1.add(lblBalance, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, -1, -1));
 
+        btnTopup.setBackground(new java.awt.Color(255, 255, 255));
         btnTopup.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnTopup.setText("Top Up");
+        btnTopup.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnTopup.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnTopup.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnTopupActionPerformed(evt);
@@ -127,12 +135,15 @@ public class PassangerProfile extends javax.swing.JFrame {
         });
         jPanel1.add(btnTopup, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 30, 90, -1));
 
-        lblLoan.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lblLoan.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lblLoan.setText("loan");
         jPanel1.add(lblLoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 40, -1, -1));
 
+        btnLoan.setBackground(new java.awt.Color(255, 255, 255));
         btnLoan.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLoan.setText("Get Loan");
+        btnLoan.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLoan.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnLoan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLoanActionPerformed(evt);
@@ -140,62 +151,77 @@ public class PassangerProfile extends javax.swing.JFrame {
         });
         jPanel1.add(btnLoan, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 10, 90, -1));
 
-        label1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label1.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label1.setText("Balance: ");
         jPanel1.add(label1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 20, -1, -1));
 
-        lable2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lable2.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lable2.setText("Loan:");
         jPanel1.add(lable2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, -1, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 220, 60));
 
+        btnCardDetails.setBackground(new java.awt.Color(255, 255, 255));
         btnCardDetails.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnCardDetails.setText("card");
+        btnCardDetails.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnCardDetails.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCardDetails.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnCardDetails.setMinimumSize(new java.awt.Dimension(80, 30));
         btnCardDetails.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCardDetailsActionPerformed(evt);
             }
         });
-        getContentPane().add(btnCardDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 60, 30));
+        getContentPane().add(btnCardDetails, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 330, 80, 30));
 
-        label3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label3.setText("Name");
         getContentPane().add(label3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, 40, -1));
 
-        label4.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label4.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label4.setText("Username");
         getContentPane().add(label4, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 140, -1, -1));
 
-        label5.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label5.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label5.setText("Email ID");
         getContentPane().add(label5, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 170, -1, -1));
 
-        label6.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label6.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label6.setText("Address");
         getContentPane().add(label6, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 200, -1, -1));
 
-        label7.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label7.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label7.setText("Contact No");
         getContentPane().add(label7, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 230, -1, -1));
 
-        label8.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        label8.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         label8.setText("Gender");
         getContentPane().add(label8, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 260, -1, -1));
 
-        lable3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        lable3.setFont(new java.awt.Font("Tahoma", 0, 12)); // NOI18N
         lable3.setText("Add card details");
         getContentPane().add(lable3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 340, 150, -1));
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnBack.setMinimumSize(new java.awt.Dimension(80, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
+        btnLogout.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout.setText("Logout");
-        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        btnLogout.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnLogout.setMinimumSize(new java.awt.Dimension(80, 30));
+        jPanel2.add(btnLogout, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 10, 80, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 

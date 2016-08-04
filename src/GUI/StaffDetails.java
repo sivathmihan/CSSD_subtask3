@@ -65,35 +65,51 @@ public class StaffDetails extends javax.swing.JFrame {
 
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
+        btnBack.setBackground(new java.awt.Color(255, 255, 255));
         btnBack.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnBack.setText("Back");
+        btnBack.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnBack.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnBack.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnBack.setMinimumSize(new java.awt.Dimension(80, 30));
         btnBack.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnBackActionPerformed(evt);
             }
         });
-        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 0, -1, 30));
+        jPanel2.add(btnBack, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 80, 30));
 
+        btnLogout2.setBackground(new java.awt.Color(255, 255, 255));
         btnLogout2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout2.setText("Logout");
+        btnLogout2.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnLogout2.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnLogout2.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnLogout2.setMinimumSize(new java.awt.Dimension(80, 30));
         btnLogout2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLogout2ActionPerformed(evt);
             }
         });
-        jPanel2.add(btnLogout2, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
+        jPanel2.add(btnLogout2, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 10, 70, 30));
 
+        btnaddstaff.setBackground(new java.awt.Color(255, 255, 255));
         btnaddstaff.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnaddstaff.setText("Add Staff");
+        btnaddstaff.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnaddstaff.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnaddstaff.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnaddstaff.setMinimumSize(new java.awt.Dimension(80, 30));
         btnaddstaff.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnaddstaffActionPerformed(evt);
             }
         });
-        jPanel2.add(btnaddstaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 0, -1, 30));
+        jPanel2.add(btnaddstaff, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 10, 70, 30));
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 
+        tblstaff.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
         tblstaff.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
@@ -112,14 +128,19 @@ public class StaffDetails extends javax.swing.JFrame {
         txtSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 50, 150, -1));
 
+        btnSearch.setBackground(new java.awt.Color(255, 255, 255));
         btnSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnSearch.setText("Search");
+        btnSearch.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0), 2));
+        btnSearch.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnSearch.setMaximumSize(new java.awt.Dimension(80, 30));
+        btnSearch.setMinimumSize(new java.awt.Dimension(80, 30));
         btnSearch.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnSearchActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 50, -1, -1));
+        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(170, 50, 70, 30));
 
         btnLogout1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnLogout1.setText("Logout");
@@ -131,16 +152,16 @@ public class StaffDetails extends javax.swing.JFrame {
         getContentPane().add(btnLogout1, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 0, -1, 30));
 
         bgType.add(rbInspector);
-        rbInspector.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbInspector.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbInspector.setText("Inspector");
         getContentPane().add(rbInspector, new org.netbeans.lib.awtextra.AbsoluteConstraints(120, 80, -1, -1));
 
         bgType.add(rbDriver);
-        rbDriver.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbDriver.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         rbDriver.setText("Driver");
         getContentPane().add(rbDriver, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, -1, -1));
 
-        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         jLabel2.setText("Type");
         getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 80, -1, 20));
 
