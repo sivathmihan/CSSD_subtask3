@@ -137,8 +137,17 @@ public class AddStation extends javax.swing.JFrame {
         {
             sOs = new SetOfStations<>();
         }
-        
-        
+        int statcount=1;
+        for(station st:sOs)
+        {   
+            statcount++;
+            station.setStaCount(statcount);
+            if(st.getStaName().equalsIgnoreCase(stationName))
+            {
+                JOptionPane.showMessageDialog(this,"Station ALready Added");
+                return;
+            }
+        }
         sOs.add(new station(stationName, str, 1));
         
             try {

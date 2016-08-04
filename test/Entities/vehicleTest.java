@@ -5,8 +5,7 @@
  */
 package Entities;
 
-
-import EntitySets.SetOfRoutes;
+import EntitySets.SetOfVehicles;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
@@ -25,40 +24,40 @@ import static org.junit.Assert.*;
  *
  * @author Kaashiff Ahamed
  */
-public class RoutesTest {
+public class vehicleTest {
+      
+    private static final String FILE_NAME = "testVehicles.ser";
+    private static final SetOfVehicles<vehicle> sOv =new SetOfVehicles<vehicle>();
     
-    private static final String FILE_NAME = "testRoutes.ser";
-     private static final SetOfRoutes<Routes> sOr=new SetOfRoutes<Routes>();
-     
-     static {
+    static {
              
-		sOr.add(new Routes("Jaffna", "Kandy", "NB-2748", "14", "DRI0000001", "INS0000001", "11/08/2016"));
-                sOr.add(new Routes("Colombo", "Kandy", "NB-6788", "14", "DRI0000002", "INS0000002", "09/08/2016"));
-                sOr.add(new Routes("Kandy", "Jaffna", "NB-2748", "14", "DRI0000001", "INS0000001", "07/08/2016"));
-                try {
-			Serialize(sOr, FILE_NAME);
+		sOv.add(new vehicle("Bus", "EPNB2748", "Tata", "05/08/2016", 1));
+                sOv.add(new vehicle("Train", "NB274", "Nissan", "05/08/2016", 2));
+                sOv.add(new vehicle("TRam", "TR27", "Yamaha", "05/08/2016", 3));
+                    try {
+			Serialize(sOv, FILE_NAME);
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
 	}
     
-    public RoutesTest() {
-    }
     
+    public vehicleTest() {
+        
+    }
     @Test
-    public void routesTest() {
+    public void creditCardTest() {
             
             try {
 			int i = 0;
-			for (Routes rt : deserialize(FILE_NAME)) {
-                            Assert.assertEquals(rt.getFrom(), sOr.get(i).getFrom());
-                            Assert.assertEquals(rt.getTo(),sOr.get(i).getTo());
-                            Assert.assertEquals(rt.getVehicalNo(),sOr.get(i).getVehicalNo());
-                            Assert.assertEquals(rt.getDate(),sOr.get(i).getDate());
-                            Assert.assertEquals(rt.getDriverID(),sOr.get(i).getDriverID());
-                            Assert.assertEquals(rt.getInspectorID(),sOr.get(i).getInspectorID());
-                            Assert.assertEquals(rt.getNoOfStops(),sOr.get(i).getNoOfStops());
+			for (vehicle v : deserialize(FILE_NAME)) {
+                            Assert.assertEquals(v.getVehicleName(), sOv.get(i).getVehicleName());
+                            Assert.assertEquals(v.getVehiID(), sOv.get(i).getVehiID());
+                            Assert.assertEquals(v.getDate(), sOv.get(i).getDate());
+                            Assert.assertEquals(v.getVehiModel(), sOv.get(i).getVehiModel());
+                            Assert.assertEquals(v.getType(),sOv.get(i).getType());
                             
+                           
                          i++;   
             
 	}
@@ -76,6 +75,7 @@ public class RoutesTest {
 		deserialize("invalid name");
 
 	}
+    
     public static void Serialize(Object object, String filename) throws IOException {
 
 		FileOutputStream out = new FileOutputStream(filename);
@@ -85,13 +85,16 @@ public class RoutesTest {
 		out.close();
 	}
     
-    public static SetOfRoutes<Routes> deserialize(String filename)
+    public static SetOfVehicles<vehicle> deserialize(String filename)
 			throws IOException, ClassNotFoundException {
 
 		FileInputStream in = new FileInputStream(filename);
 		ObjectInputStream ois = new ObjectInputStream(in);
-		SetOfRoutes<Routes> sOu =(SetOfRoutes<Routes>) ois.readObject();
+		SetOfVehicles<vehicle> sOv = (SetOfVehicles<vehicle>) ois.readObject();
 		in.close();
-		return sOu;
+
+		return sOv;
 	}
+    
+    
 }
