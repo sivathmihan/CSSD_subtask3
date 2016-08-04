@@ -213,6 +213,35 @@ public class AddVehical extends javax.swing.JFrame {
         {
             sOv = new SetOfVehicles<>();
         }
+        int buscount=1;
+        int trncount=1;
+        int trmcount=1;
+        
+        for(vehicle ve:sOv)
+        {
+            if(ve.getType().equalsIgnoreCase("bus"))
+            {
+                buscount++;
+                vehicle.setBusCount(buscount);
+            }
+            if(ve.getType().equalsIgnoreCase("train"))
+            {
+                trncount++;
+                vehicle.setTrainCount(trncount);
+            }
+            if(ve.getType().equalsIgnoreCase("tram"))
+            {
+                trmcount++;
+                vehicle.setTramCount(trmcount);
+            }
+            
+            
+            if(vehiNo.equals(ve.getVehiNo())){
+                JOptionPane.showMessageDialog(rootPane, "Vehicle already exists.");
+                return;
+            }
+            
+        }
         
         
         sOv.add(new vehicle(vehicleName, vehiNo, vehiModel, str, type));
