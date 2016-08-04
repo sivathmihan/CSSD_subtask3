@@ -24,53 +24,11 @@ public class User implements Serializable{
     private float balance;
     private float loanAmount;
     private boolean loanStatus;
-    private static int passCount=1;
-    private static int driverCount=1;
-    private static int insCount=1;
+    public static int passCount=1;
+    public static int driverCount=1;
+    public static int insCount=1;
     private String type;
 
-    /**
-     * @return the passCount
-     */
-    public static int getPassCount() {
-        return passCount;
-    }
-
-    /**
-     * @param aPassCount the passCount to set
-     */
-    public static void setPassCount(int aPassCount) {
-        passCount = aPassCount;
-    }
-
-    /**
-     * @return the driverCount
-     */
-    public static int getDriverCount() {
-        return driverCount;
-    }
-
-    /**
-     * @param aDriverCount the driverCount to set
-     */
-    public static void setDriverCount(int aDriverCount) {
-        driverCount = aDriverCount;
-    }
-
-    /**
-     * @return the insCount
-     */
-    public static int getInsCount() {
-        return insCount;
-    }
-
-    /**
-     * @param aInsCount the insCount to set
-     */
-    public static void setInsCount(int aInsCount) {
-        insCount = aInsCount;
-    }
-    
     
     public User(String name,String uname,String pw,String email,String address,String mobile,String gender,int type){
         if(type==0){
@@ -80,17 +38,17 @@ public class User implements Serializable{
         if(type==1)
         {
             this.userID=newPassengerID(type);
-            this.passCount++;
+            passCount++;
             this.type="passenger";
         }
         if(type==2){
             this.userID=newPassengerID(type);
-            this.driverCount++;
+            driverCount++;
             this.type="driver";
         }
         if(type==3){
             this.userID=newPassengerID(type);
-            this.insCount++;
+            insCount++;
             this.type="inspector";
         }
       
@@ -113,15 +71,15 @@ public class User implements Serializable{
         String prefix="";
         
         if(type==1){
-            count=getPassCount();
+            count=passCount;
             prefix="PAS";
         }
         else if(type==2){
-            count=getDriverCount();
+            count=driverCount;
             prefix="DRI";
         }
         else if(type==3){
-            count=getInsCount();
+            count=insCount;
             prefix="INS";
         }
         

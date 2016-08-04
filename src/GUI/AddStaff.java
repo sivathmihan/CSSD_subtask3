@@ -175,6 +175,9 @@ public class AddStaff extends javax.swing.JFrame {
         String mobile=txtPhone.getText();
         String address=txtAddress.getText();
         String gender="";
+        int drcount=1;
+        int incount=1;
+        int pascount=1;
         if(rbFemale.isSelected())
                 gender="Female";
         else if(rbMale.isSelected())
@@ -230,6 +233,22 @@ public class AddStaff extends javax.swing.JFrame {
         
         for(User sOu1:sOu)
         {
+            if(sOu1.getType().equalsIgnoreCase("driver"))
+            {
+                drcount++;
+                User.driverCount=drcount;
+            }
+            if(sOu1.getType().equalsIgnoreCase("inspector"))
+            {
+                incount++;
+                User.insCount=drcount;
+            }
+            if(sOu1.getType().equalsIgnoreCase("passenger"))
+            {
+                pascount++;
+                User.passCount=drcount;
+            }
+            
             if(uname.equals(sOu1.getUserName())){
                 JOptionPane.showMessageDialog(rootPane, "Username already exists.");
                 return;
