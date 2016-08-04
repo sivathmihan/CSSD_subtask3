@@ -8,10 +8,12 @@ package GUI;
 import Controllers.Serialize;
 import Entities.User;
 import EntitySets.SetOfUsers;
+import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -25,7 +27,12 @@ public class Main {
     public static void main(String[] args) {
         // TODO code application logic here
         //addAdmin();
+                try {    
+            UIManager.setLookAndFeel(new SyntheticaStandardLookAndFeel());  
+        }  catch (Exception e) {      
+        e.printStackTrace(); }
         new OpenWindowAndroid().setVisible(true);
+ 
     }
     
     private static void addAdmin(){

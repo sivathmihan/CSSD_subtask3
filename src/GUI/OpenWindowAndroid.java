@@ -5,6 +5,11 @@
  */
 package GUI;
 
+import de.javasoft.plaf.synthetica.SyntheticaStandardLookAndFeel;
+import java.awt.Component;
+import javax.swing.UIManager;
+
+
 /**
  *
  * @author CRYSIS_POOL
@@ -16,6 +21,12 @@ public class OpenWindowAndroid extends javax.swing.JFrame {
      */
  public OpenWindowAndroid() {
         initComponents();
+        try {    
+            UIManager.setLookAndFeel(new SyntheticaStandardLookAndFeel());  
+        }  catch (Exception e) {      
+        e.printStackTrace();  
+        
+}
     }
 
     /**
@@ -39,6 +50,7 @@ public class OpenWindowAndroid extends javax.swing.JFrame {
 
         jButton1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jButton1.setText("Login");
+        jButton1.setFocusable(false);
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
@@ -48,6 +60,7 @@ public class OpenWindowAndroid extends javax.swing.JFrame {
 
         jButton2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jButton2.setText("Sign up");
+        jButton2.setFocusable(false);
         jButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton2ActionPerformed(evt);
