@@ -5,6 +5,18 @@
  */
 package GUI;
 
+import Controllers.Serialize;
+import Entities.vehicle;
+import EntitySets.SetOfVehicles;
+import java.io.IOException;
+import java.util.Vector;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JRadioButton;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.table.DefaultTableModel;
+
 /**
  *
  * @author CRYSIS_POOL
@@ -14,6 +26,7 @@ public class VehicalDetails extends javax.swing.JFrame {
     /**
      * Creates new form VehicalDetails
      */
+    SetOfVehicles<vehicle> sOv;
     public VehicalDetails() {
         initComponents();
     }
@@ -27,16 +40,18 @@ public class VehicalDetails extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnvehiDetails = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tblvehiDetails = new javax.swing.JTable();
         btnVehical = new javax.swing.JButton();
-        cbVehicalType = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
         txtSearch = new javax.swing.JTextField();
         btnSearch = new javax.swing.JButton();
+        rbBus = new javax.swing.JRadioButton();
+        rbTrain = new javax.swing.JRadioButton();
+        rbTram = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(250, 400));
@@ -68,7 +83,7 @@ public class VehicalDetails extends javax.swing.JFrame {
 
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tblvehiDetails.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -79,9 +94,9 @@ public class VehicalDetails extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tblvehiDetails);
 
-        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 120, 220, 200));
+        getContentPane().add(jScrollPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 170, 220, 130));
 
         btnVehical.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnVehical.setText("Add Vehical");
@@ -92,20 +107,37 @@ public class VehicalDetails extends javax.swing.JFrame {
         });
         getContentPane().add(btnVehical, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 330, -1, 30));
 
-        cbVehicalType.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        cbVehicalType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cbVehicalType, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 50, 120, -1));
-
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        jLabel1.setText("Vehical Type");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 50, -1, -1));
-
         txtSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 90, 130, -1));
+        txtSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                txtSearchActionPerformed(evt);
+            }
+        });
+        getContentPane().add(txtSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 60, 130, -1));
 
         btnSearch.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnSearch.setText("Search");
-        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 90, -1, -1));
+        btnSearch.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSearchActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnSearch, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 60, -1, -1));
+
+        btnvehiDetails.add(rbBus);
+        rbBus.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbBus.setText("Bus");
+        getContentPane().add(rbBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 110, -1, -1));
+
+        btnvehiDetails.add(rbTrain);
+        rbTrain.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTrain.setText("Train");
+        getContentPane().add(rbTrain, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 110, -1, -1));
+
+        btnvehiDetails.add(rbTram);
+        rbTram.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTram.setText("Tram");
+        getContentPane().add(rbTram, new org.netbeans.lib.awtextra.AbsoluteConstraints(140, 110, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -131,6 +163,15 @@ public class VehicalDetails extends javax.swing.JFrame {
         
         this.dispose();
     }//GEN-LAST:event_btnVehicalActionPerformed
+
+    private void txtSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtSearchActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_txtSearchActionPerformed
+
+    private void btnSearchActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSearchActionPerformed
+        // TODO add your handling code here:
+        searchVehicleByID(tblvehiDetails, sOv, txtSearch, rbBus,rbTrain,rbTram);
+    }//GEN-LAST:event_btnSearchActionPerformed
 
     /**
      * @param args the command line arguments
@@ -172,11 +213,74 @@ public class VehicalDetails extends javax.swing.JFrame {
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnSearch;
     private javax.swing.JButton btnVehical;
-    private javax.swing.JComboBox cbVehicalType;
-    private javax.swing.JLabel jLabel1;
+    private javax.swing.ButtonGroup btnvehiDetails;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JRadioButton rbBus;
+    private javax.swing.JRadioButton rbTrain;
+    private javax.swing.JRadioButton rbTram;
+    private javax.swing.JTable tblvehiDetails;
     private javax.swing.JTextField txtSearch;
     // End of variables declaration//GEN-END:variables
+
+private void searchVehicleByID(JTable tblvehiDetails, SetOfVehicles<vehicle> sOv,JTextField txt,JRadioButton rbbus,JRadioButton rbtrain,JRadioButton rbtram) {
+       DefaultTableModel dtm=(DefaultTableModel) tblvehiDetails.getModel();
+        dtm.setRowCount(0);
+        String text=txt.getText();
+        String type="";
+        if(rbbus.isSelected())
+            type="bus";
+        if(rbtrain.isSelected())
+            type="train";
+        if(rbtram.isSelected())
+            type="tram";
+        
+      try {
+          sOv=(SetOfVehicles<vehicle>) Serialize.deserialize("SetOfVehicles.ser");
+          
+          for(vehicle vel:sOv){
+              if(type.equals("")){
+                  if(vel.getVehiID().contains(text)){
+                  Vector v=new Vector();
+                  v.add(vel.getVehiID());
+                  v.add(vel.getVehiNo());
+                  v.add(vel.getVehiModel());
+                  v.add(vel.getDate());
+                  Vector h=new Vector();
+                  h.add("ID");
+                  h.add("VehicleNo");
+                  h.add("VehicleModel");
+                  h.add("Added Date");
+                  dtm.addRow(v);
+                  dtm.setColumnIdentifiers(h);
+              }
+                  
+              }
+              else{
+              if(vel.getVehiID().contains(text) && vel.getType().equals(type)){
+                  Vector v=new Vector();
+                  v.add(vel.getVehiID());
+                  v.add(vel.getVehiNo());
+                  v.add(vel.getVehiModel());
+                  v.add(vel.getDate());
+                  Vector h=new Vector();
+                  h.add("ID");
+                  h.add("VehicleNo");
+                  h.add("VehicleModel");
+                  h.add("Added Date");
+                  dtm.addRow(v);
+                  dtm.setColumnIdentifiers(h);
+              }
+              }
+               tblvehiDetails.setModel(dtm);
+               
+          }
+      } catch (IOException ex) {
+          Logger.getLogger(StaffDetails.class.getName()).log(Level.SEVERE, null, ex);
+      } catch (ClassNotFoundException ex) {
+          Logger.getLogger(StaffDetails.class.getName()).log(Level.SEVERE, null, ex);
+      }
+    }
+
 }
+

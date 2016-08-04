@@ -5,17 +5,32 @@
  */
 package GUI;
 
+import Controllers.Serialize;
+import Entities.station;
+import EntitySets.SetOfStations;
+import java.io.IOException;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
+import org.jdesktop.xswingx.PromptSupport;
+
 /**
  *
- * @author CRYSIS_POOL
+ * @author Kaashiff Ahamed
  */
 public class AddStation extends javax.swing.JFrame {
 
     /**
-     * Creates new form AddStation
+     * Creates new form AddAmount
      */
     public AddStation() {
         initComponents();
+        PromptSupport.setPrompt("Enter Station", txtStation);      
+        
+        PromptSupport.setFocusBehavior(PromptSupport.FocusBehavior.SHOW_PROMPT, txtStation);
     }
 
     /**
@@ -27,12 +42,13 @@ public class AddStation extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
-        txtAmount = new javax.swing.JTextField();
-        btnPay = new javax.swing.JButton();
-        lblCardNo = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
+        jDateChooser1 = new com.toedter.calendar.JDateChooser();
+        txtStation = new javax.swing.JTextField();
+        btnAdd = new javax.swing.JButton();
         jLabel2 = new javax.swing.JLabel();
         btnCancel = new javax.swing.JButton();
+        jStatdate = new com.toedter.calendar.JDateChooser();
+        jLabel3 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(230, 180));
@@ -42,24 +58,21 @@ public class AddStation extends javax.swing.JFrame {
         setSize(new java.awt.Dimension(230, 180));
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        txtAmount.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        getContentPane().add(txtAmount, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 30, 130, -1));
+        txtStation.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        getContentPane().add(txtStation, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 30, 120, -1));
 
-        btnPay.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        btnPay.setText("pay");
-        getContentPane().add(btnPay, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 60, 30));
-
-        lblCardNo.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        lblCardNo.setText("card no");
-        getContentPane().add(lblCardNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 70, 130, -1));
-
-        jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        jLabel1.setText("Card No");
-        getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 70, -1, -1));
+        btnAdd.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        btnAdd.setText("Add");
+        btnAdd.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAddActionPerformed(evt);
+            }
+        });
+        getContentPane().add(btnAdd, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 110, 60, 30));
 
         jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        jLabel2.setText("Amount");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 30, -1, -1));
+        jLabel2.setText("Date");
+        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 70, -1, -1));
 
         btnCancel.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnCancel.setText("Cancel");
@@ -69,6 +82,11 @@ public class AddStation extends javax.swing.JFrame {
             }
         });
         getContentPane().add(btnCancel, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 110, 80, 30));
+        getContentPane().add(jStatdate, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 70, 120, -1));
+
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel3.setText("Station");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(20, 30, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -77,6 +95,74 @@ public class AddStation extends javax.swing.JFrame {
     private void btnCancelActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelActionPerformed
         this.dispose();
     }//GEN-LAST:event_btnCancelActionPerformed
+
+    private void btnAddActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAddActionPerformed
+        // TODO add your handling code here:
+        
+        String stationName=txtStation.getText();
+        Date date=jStatdate.getDate();
+        DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
+        String str=df.format(date);
+        System.out.println(str);
+        
+        
+        String err="";
+        int errcheck=0;
+        
+        if(stationName.isEmpty()) 
+        {
+            err+="\n Must Enter Station Name";
+            errcheck=1;
+        }
+        
+        if(str.isEmpty()) 
+        {
+            err+="\n Must Enter an Date";
+            errcheck=1;
+        }
+        
+        if(errcheck==1)
+        {
+            JOptionPane.showMessageDialog(rootPane, err);
+            return;
+        }
+        
+        
+        else {
+            
+            SetOfStations<station> sOs;
+        try{
+            sOs = (SetOfStations)Serialize.deserialize("SetOfStations.ser");
+        }catch(IOException | ClassNotFoundException e)
+        {
+            sOs = new SetOfStations<>();
+        }
+        
+        
+        sOs.add(new station(stationName, str, 1));
+        
+            try {
+                Serialize.serialize(sOs,"SetOfStations.ser");
+            } catch (IOException ex) {
+                Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+        for(station sOs1:sOs)
+        {
+            String id=sOs1.getStaId();
+            String name=sOs1.getStaName();
+            String d=sOs1.getDate();
+            
+                
+            System.out.println(""+id+","+name+","+d+"");
+        }
+            
+            
+            
+        }
+        
+        
+    }//GEN-LAST:event_btnAddActionPerformed
 
     /**
      * @param args the command line arguments
@@ -104,6 +190,9 @@ public class AddStation extends javax.swing.JFrame {
             java.util.logging.Logger.getLogger(AddStation.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
+        //</editor-fold>
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -114,11 +203,12 @@ public class AddStation extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton btnAdd;
     private javax.swing.JButton btnCancel;
-    private javax.swing.JButton btnPay;
-    private javax.swing.JLabel jLabel1;
+    private com.toedter.calendar.JDateChooser jDateChooser1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel lblCardNo;
-    private javax.swing.JTextField txtAmount;
+    private javax.swing.JLabel jLabel3;
+    private com.toedter.calendar.JDateChooser jStatdate;
+    private javax.swing.JTextField txtStation;
     // End of variables declaration//GEN-END:variables
 }

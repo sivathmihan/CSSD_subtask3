@@ -5,9 +5,16 @@
  */
 package GUI;
 
+import Controllers.Serialize;
+import Entities.vehicle;
+import EntitySets.SetOfVehicles;
+import java.io.IOException;
 import java.text.DateFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+import javax.swing.JOptionPane;
 import org.jdesktop.xswingx.PromptSupport;
 
 /**
@@ -21,12 +28,12 @@ public class AddVehical extends javax.swing.JFrame {
      */
     public AddVehical() {
         initComponents();
-        PromptSupport.setPrompt("Enter Vehical ID", txtVehicalID);
+        //PromptSupport.setPrompt("Enter Vehical ID", txtVehicalID);
         PromptSupport.setPrompt("Enter Vehical No", txtVehicalNo);
         PromptSupport.setPrompt("Enter Vehical Model", txtVehicalModel);
         
         
-        PromptSupport.setFocusBehavior(PromptSupport.FocusBehavior.SHOW_PROMPT, txtVehicalID);
+        //PromptSupport.setFocusBehavior(PromptSupport.FocusBehavior.SHOW_PROMPT, txtVehicalID);
 
     }
 
@@ -39,17 +46,19 @@ public class AddVehical extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        btnvehicle = new javax.swing.ButtonGroup();
         jPanel2 = new javax.swing.JPanel();
         btnBack = new javax.swing.JButton();
         btnLogout = new javax.swing.JButton();
         txtVehicalModel = new javax.swing.JTextField();
-        txtVehicalID = new javax.swing.JTextField();
         txtVehicalNo = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        cbType = new javax.swing.JComboBox();
         btnSubmit = new javax.swing.JButton();
         dcDate = new com.toedter.calendar.JDateChooser();
-        jLabel2 = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        rbBus = new javax.swing.JRadioButton();
+        rbTrain = new javax.swing.JRadioButton();
+        rbTram = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setMaximumSize(new java.awt.Dimension(250, 400));
@@ -82,21 +91,14 @@ public class AddVehical extends javax.swing.JFrame {
         getContentPane().add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 240, 40));
 
         txtVehicalModel.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        getContentPane().add(txtVehicalModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 180, 20));
-
-        txtVehicalID.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        getContentPane().add(txtVehicalID, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 60, 180, 20));
+        getContentPane().add(txtVehicalModel, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, 180, 20));
 
         txtVehicalNo.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        getContentPane().add(txtVehicalNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 100, 180, 20));
+        getContentPane().add(txtVehicalNo, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 140, 180, 20));
 
         jLabel1.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         jLabel1.setText("Date");
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 230, -1, -1));
-
-        cbType.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        cbType.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        getContentPane().add(cbType, new org.netbeans.lib.awtextra.AbsoluteConstraints(76, 180, 130, -1));
 
         btnSubmit.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
         btnSubmit.setText("Submit");
@@ -105,12 +107,27 @@ public class AddVehical extends javax.swing.JFrame {
                 btnSubmitActionPerformed(evt);
             }
         });
-        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 280, 110, 40));
+        getContentPane().add(btnSubmit, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 260, 110, 40));
         getContentPane().add(dcDate, new org.netbeans.lib.awtextra.AbsoluteConstraints(80, 230, 130, -1));
 
-        jLabel2.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
-        jLabel2.setText("Type");
-        getContentPane().add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 180, -1, -1));
+        jLabel3.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        jLabel3.setText("Vehicle");
+        getContentPane().add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 50, -1, -1));
+
+        btnvehicle.add(rbBus);
+        rbBus.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbBus.setText("Bus");
+        getContentPane().add(rbBus, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 90, -1, -1));
+
+        btnvehicle.add(rbTrain);
+        rbTrain.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTrain.setText("Train");
+        getContentPane().add(rbTrain, new org.netbeans.lib.awtextra.AbsoluteConstraints(90, 90, -1, -1));
+
+        btnvehicle.add(rbTram);
+        rbTram.setFont(new java.awt.Font("Baskerville Old Face", 0, 14)); // NOI18N
+        rbTram.setText("Tram");
+        getContentPane().add(rbTram, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 90, -1, -1));
 
         pack();
         setLocationRelativeTo(null);
@@ -132,10 +149,96 @@ public class AddVehical extends javax.swing.JFrame {
 
     private void btnSubmitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSubmitActionPerformed
         // TODO add your handling code here:
+        String vehicleName="";
+        if(rbBus.isSelected())
+                vehicleName="Bus";
+        else if(rbTrain.isSelected())
+                vehicleName="Train";
+        else if(rbTram.isSelected())
+                vehicleName="Tram";
+        String vehiNo=txtVehicalNo.getText();
+        String vehiModel=txtVehicalModel.getText();
         Date date=dcDate.getDate();
         DateFormat df = new SimpleDateFormat("MM/dd/yyyy");
         String str=df.format(date);
         System.out.println(str);
+        
+        int type=7;
+        if(rbBus.isSelected())
+                type=1;
+        else if(rbTrain.isSelected())
+                type=2;
+        else if(rbTram.isSelected())
+                type=3;
+        
+        
+        String err="";
+        int errcheck=0;
+        
+        if(!(rbBus.isSelected()||rbTrain.isSelected()||rbTram.isSelected()))
+        {
+            err+="\n Must Select a type";
+            errcheck=1;
+        }
+        if(vehiNo.isEmpty())
+        {
+            err+="\n Must Enter an VehicleNumber";
+            errcheck=1;
+        }
+        if(vehiModel.isEmpty())
+        {
+            err+="\n Must Enter an VehicleModel";
+            errcheck=1;
+        }
+        
+        if(str.isEmpty()) 
+        {
+            err+="\n Must Enter an Date";
+            errcheck=1;
+        }
+        
+        if(errcheck==1)
+        {
+            JOptionPane.showMessageDialog(rootPane, err);
+            return;
+        }
+        
+        else {
+            
+            
+            SetOfVehicles<vehicle> sOv;
+        try{
+            sOv = (SetOfVehicles)Serialize.deserialize("SetOfVehicles.ser");
+        }catch(IOException | ClassNotFoundException e)
+        {
+            sOv = new SetOfVehicles<>();
+        }
+        
+        
+        sOv.add(new vehicle(vehicleName, vehiNo, vehiModel, str, type));
+        
+            try {
+                Serialize.serialize(sOv,"SetOfVehicles.ser");
+            } catch (IOException ex) {
+                Logger.getLogger(Signup.class.getName()).log(Level.SEVERE, null, ex);
+            }
+           
+        for(vehicle sOv1:sOv)
+        {
+            String id=sOv1.getVehiID();
+            String ve=sOv1.getVehicleName();
+            String velno=sOv1.getVehiNo();
+            String velmo=sOv1.getVehiModel();
+            String d=sOv1.getDate();
+                
+            System.out.println(""+id+","+ve+","+velno+","+velmo+","+d+"");
+        }
+         
+        //new Login().setVisible(true);
+        //this.dispose();
+            
+        }
+        
     }//GEN-LAST:event_btnSubmitActionPerformed
 
     /**
@@ -177,12 +280,14 @@ public class AddVehical extends javax.swing.JFrame {
     private javax.swing.JButton btnBack;
     private javax.swing.JButton btnLogout;
     private javax.swing.JButton btnSubmit;
-    private javax.swing.JComboBox cbType;
+    private javax.swing.ButtonGroup btnvehicle;
     private com.toedter.calendar.JDateChooser dcDate;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JTextField txtVehicalID;
+    private javax.swing.JRadioButton rbBus;
+    private javax.swing.JRadioButton rbTrain;
+    private javax.swing.JRadioButton rbTram;
     private javax.swing.JTextField txtVehicalModel;
     private javax.swing.JTextField txtVehicalNo;
     // End of variables declaration//GEN-END:variables
