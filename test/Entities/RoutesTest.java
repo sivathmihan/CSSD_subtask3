@@ -27,7 +27,7 @@ import static org.junit.Assert.*;
  */
 public class RoutesTest {
     
-    private static final String FILE_NAME = "testUser.ser";
+    private static final String FILE_NAME = "testRoutes.ser";
      private static final SetOfRoutes<Routes> sOr=new SetOfRoutes<Routes>();
      
      static {
